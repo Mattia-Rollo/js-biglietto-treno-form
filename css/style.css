@@ -13,5 +13,5 @@ input::-webkit-inner-spin-button {
   background-image: linear-gradient(rgb(35, 143, 110), rgb(29, 132, 139));
 }
 button {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.669);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
 }
