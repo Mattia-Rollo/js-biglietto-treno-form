@@ -54,6 +54,9 @@ const priceTicket = function () {
     let message = `Il prezzo del biglietto è di: `
 
     const myDiv = document.getElementById('messaggio');
+    let buyBtn = document.getElementById('buy');
+    buyBtn.classList.remove('d-none');
+
     let newprice;
     console.log(typeof newprice);
     
@@ -62,14 +65,16 @@ const priceTicket = function () {
         
         newprice = price - scontoUnder18;
         // console.log(typeof newprice);
-        message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">20%</span> quindi il totale è di: <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} €</span>` ; 
+        message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">20%</span> quindi il totale è di:<br> <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} €</span>` ; 
         console.log(message);
         myDiv.innerHTML = message;
+
+
     } else
     if (age > over65) {
 
         newprice = price - scontoOver65;
-        message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">40%</span> quindi il totale è di: <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} € </span>` ; 
+        message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">40%</span> quindi il totale è di:<br> <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} € </span>` ; 
         console.log(message);
         myDiv.innerHTML = message;
     } else {

@@ -1,3 +1,5 @@
+
+/* toglie te frecce laterali di un input number */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -7,3 +9,9 @@ input::-webkit-inner-spin-button {
 /* span.input-group-text {
   width: 140px;
 } */
+.container-fluid {
+  background-image: linear-gradient(rgb(35, 143, 110), rgb(29, 132, 139));
+}
+button {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.669);
+}
