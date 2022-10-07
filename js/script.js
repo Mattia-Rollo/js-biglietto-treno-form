@@ -59,7 +59,14 @@ const priceTicket = function () {
 
     let newprice;
     console.log(typeof newprice);
-    
+    if ((price < 0) || (age < 0)) {
+        message = `
+                    <span class="text-danger fw-bold"> ATTENZIONE </span><br>
+        non posso calcolare, devi inserire solo numeri positivi
+        
+        `
+
+    }else
     if (age < under18) {
         
         
@@ -67,7 +74,7 @@ const priceTicket = function () {
         // console.log(typeof newprice);
         message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">20%</span> quindi il totale è di:<br> <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} €</span>` ; 
         console.log(message);
-        myDiv.innerHTML = message;
+        
 
 
     } else
@@ -76,14 +83,14 @@ const priceTicket = function () {
         newprice = price - scontoOver65;
         message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">40%</span> quindi il totale è di:<br> <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} € </span>` ; 
         console.log(message);
-        myDiv.innerHTML = message;
+        
     } else {
         console.log(message);
         message += `<span class="text-success fw-bold bg-light rounded px-1">${price.toFixed(2)} €</span>`
-        myDiv.innerHTML = message;
+        
     }
 
-
+    myDiv.innerHTML = message;
 }
 
 btn.addEventListener('click', priceTicket);
