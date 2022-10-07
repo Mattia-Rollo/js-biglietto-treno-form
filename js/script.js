@@ -27,14 +27,34 @@ const priceTicket = function () {
     let km = document.getElementById('km').value;
     console.log(km);
 
-    const age = document.getElementById('age').value;
+    let age = document.getElementById('age').value;
     km = parseInt(km);
+    age = parseInt(age);
     console.log(km,age);
     
     const price = km * priceKm;
     console.log(typeof km);
     console.log(price);
-    
+    const under18 = 18;
+    const over65 = 65;
+    const scontoUnder18 = price * 0.2;
+    const scontoUnder65 = price * 0.4;
+    let message = `il prezzo del biglietto è di: ${price} €`
+
+    if (age < under18) {
+        
+        let newprice = 0;
+        newprice = price - scontoUnder18;
+        message += ` ma in base alla tua età hai diritto a uno sconto del 20% e quindi il totale è di: ${newprice} €` ; 
+        console.log(message);
+    }
+    if (age > over65) {
+        let newprice = 0;
+        newprice = price - scontoOver65;
+        message += ` ma in base alla tua età hai diritto a uno sconto del 40% e quindi il totale è di: ${newprice} €` ; 
+        console.log(message);
+    }
+
 
 }
 
