@@ -51,7 +51,7 @@ const priceTicket = function () {
     const over65 = 65;
     const scontoUnder18 = price * 0.2;
     const scontoOver65 = price * 0.4;
-    let message = `Il prezzo del biglietto è di: ${price.toFixed(2)} €`
+    let message = `Il prezzo del biglietto è di: `
 
     const myDiv = document.getElementById('messaggio');
     let newprice;
@@ -62,23 +62,24 @@ const priceTicket = function () {
         
         newprice = price - scontoUnder18;
         // console.log(typeof newprice);
-        message += ` ma in base alla tua età hai diritto a uno sconto del 20% quindi il totale è di: ${newprice.toFixed(2)} €` ; 
+        message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">20%</span> quindi il totale è di: <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} €</span>` ; 
         console.log(message);
         myDiv.innerHTML = message;
     } else
     if (age > over65) {
 
         newprice = price - scontoOver65;
-        message += ` ma in base alla tua età hai diritto a uno sconto del 40% quindi il totale è di: ${newprice.toFixed(2)} €` ; 
+        message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">40%</span> quindi il totale è di: <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} € </span>` ; 
         console.log(message);
         myDiv.innerHTML = message;
     } else {
         console.log(message);
+        message += `<span class="text-success fw-bold bg-light rounded px-1">${price.toFixed(2)} €</span>`
         myDiv.innerHTML = message;
     }
 
 
 }
 
-document.getElementsByTagName('input')[0,1].addEventListener('change', priceTicket);
+btn.addEventListener('click', priceTicket);
 
