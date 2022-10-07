@@ -20,17 +20,21 @@ const btn = document.getElementById('calcola');
 
 
 
+
 const priceTicket = function () {
     
     const priceKm = 0.21;
-    const km = document.getElementById('km').value;
-    const age = document.getElementById('age').value;
-    parseInt(km);
+    let km = document.getElementById('km').value;
     console.log(km);
+
+    const age = document.getElementById('age').value;
+    km = parseInt(km);
+    console.log(km,age);
     
     const price = km * priceKm;
     console.log(typeof km);
     console.log(price);
+    
 
 }
 
