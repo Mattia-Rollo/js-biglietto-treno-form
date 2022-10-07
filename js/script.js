@@ -38,21 +38,29 @@ const priceTicket = function () {
     const under18 = 18;
     const over65 = 65;
     const scontoUnder18 = price * 0.2;
-    const scontoUnder65 = price * 0.4;
+    const scontoOver65 = price * 0.4;
     let message = `il prezzo del biglietto è di: ${price} €`
 
+    const myDiv = document.getElementById('messaggio');
+
+    
     if (age < under18) {
         
         let newprice = 0;
         newprice = price - scontoUnder18;
-        message += ` ma in base alla tua età hai diritto a uno sconto del 20% e quindi il totale è di: ${newprice} €` ; 
+        message += ` ma in base alla tua età hai diritto a uno sconto del 20% quindi il totale è di: ${newprice.toFixed(2)} €` ; 
         console.log(message);
-    }
+        myDiv.innerHTML = message;
+    } else
     if (age > over65) {
         let newprice = 0;
         newprice = price - scontoOver65;
-        message += ` ma in base alla tua età hai diritto a uno sconto del 40% e quindi il totale è di: ${newprice} €` ; 
+        message += ` ma in base alla tua età hai diritto a uno sconto del 40% quindi il totale è di: ${newprice.toFixed(2)} €` ; 
         console.log(message);
+        myDiv.innerHTML = message;
+    } else {
+        console.log(message);
+        myDiv.innerHTML = message;
     }
 
 
