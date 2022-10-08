@@ -23,3 +23,7 @@ body.index {
 button {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
 }
+.icon-train {
+  font-size: 7rem;
+  text-align: center;
+}

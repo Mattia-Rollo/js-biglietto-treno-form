@@ -58,7 +58,7 @@ const priceTicket = function () {
 
     let newprice;
     console.log(typeof newprice);
-    if ((price <= 0) || (age <= 0)) {
+    if ((price <= 0) || (age <= 0) || (isNaN(age) || isNaN(km))) {
         message = `
                     <span class="text-danger fw-bold"> ATTENZIONE </span><br>
         non posso calcolare, devi inserire solo numeri positivi maggiori di 1 
@@ -96,6 +96,8 @@ const priceTicket = function () {
     }
 
     myDiv.innerHTML = message;
+    let iconTrain = document.getElementsByClassName('icon-train')[0];
+    iconTrain.classList.add('d-none');
 }
 
 btn.addEventListener('click', priceTicket);
