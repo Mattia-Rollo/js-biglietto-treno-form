@@ -9,10 +9,12 @@ input::-webkit-inner-spin-button {
 /* span.input-group-text {
   width: 140px;
 } */
-body {
+body.index {
   /* background-color: #234; */
-  background-image: linear-gradient(to left, rgb(35, 143, 110), rgb(29, 132, 139), #234);
+  background-image: linear-gradient( rgb(35, 143, 110), rgb(29, 132, 139), #234);
   background-size: cover;
+  background-attachment: fixed;
+
 }
 .container-fluid {
   

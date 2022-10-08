@@ -55,16 +55,17 @@ const priceTicket = function () {
 
     const myDiv = document.getElementById('messaggio');
     let buyBtn = document.getElementById('buy');
-    buyBtn.classList.remove('d-none');
 
     let newprice;
     console.log(typeof newprice);
-    if ((price < 0) || (age < 0)) {
+    if ((price <= 0) || (age <= 0)) {
         message = `
                     <span class="text-danger fw-bold"> ATTENZIONE </span><br>
-        non posso calcolare, devi inserire solo numeri positivi
+        non posso calcolare, devi inserire solo numeri positivi maggiori di 1 
         
         `
+        buyBtn.classList.add('d-none');
+
 
     }else
     if (age < under18) {
@@ -74,7 +75,8 @@ const priceTicket = function () {
         // console.log(typeof newprice);
         message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">20%</span> quindi il totale è di:<br> <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} €</span>` ; 
         console.log(message);
-        
+        buyBtn.classList.remove('d-none');
+
 
 
     } else
@@ -83,11 +85,14 @@ const priceTicket = function () {
         newprice = price - scontoOver65;
         message += `${price.toFixed(2)} € ma in base alla tua età hai diritto a uno sconto del <span class="text-danger fw-bold bg-light rounded px-1">40%</span> quindi il totale è di:<br> <span class="text-success fw-bold bg-light rounded px-1">${newprice.toFixed(2)} € </span>` ; 
         console.log(message);
+        buyBtn.classList.remove('d-none');
+
         
-    } else {
+    } else if ((age >= 18) || (age <= 65) ) {
         console.log(message);
         message += `<span class="text-success fw-bold bg-light rounded px-1">${price.toFixed(2)} €</span>`
-        
+        buyBtn.classList.remove('d-none');
+
     }
 
     myDiv.innerHTML = message;
