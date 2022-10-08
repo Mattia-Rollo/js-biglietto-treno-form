@@ -89,6 +89,7 @@ const priceTicket = function () {
 
         
     } else if ((age >= 18) || (age <= 65) ) {
+        newprice = price;
         console.log(message);
         message += `<span class="text-success fw-bold bg-light rounded px-1">${price.toFixed(2)} €</span>`
         buyBtn.classList.remove('d-none');
@@ -97,6 +98,7 @@ const priceTicket = function () {
 
     myDiv.innerHTML = message;
     let iconTrain = document.getElementsByClassName('icon-train')[0];
+    console.log(iconTrain);
     iconTrain.classList.add('d-none');
 }
 
